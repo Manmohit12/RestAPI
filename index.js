@@ -17,7 +17,13 @@ mongoose.connect(process.env.MONGO_URL)
     process.exit(1);
   });
 
+app.get('/',(req,res)=>{
+  res.send("Api Running successfully")
+})
 
+app.get('/ping',(req,res)=>{
+  res.send("Pong 🏓")
+})
 
 // Routes
 app.use('/api/users', userRouter)
